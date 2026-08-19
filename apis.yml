@@ -1,0 +1,184 @@
+aid: 5dollarfootballapi
+name: 5DollarFootballAPI
+description: A read-only REST football (soccer) data API covering live scores, fixtures, standings, league
+  and team surfaces, match events, and corner and card statistics, plus a bookmakers endpoint and a status
+  check. Fifteen operations across seven tags, served from a single versioned host under bearer-token
+  or API-key authentication. Positioned on price — the pitch is the same data from $5/month.
+url: https://raw.githubusercontent.com/api-evangelist/5dollarfootballapi/refs/heads/main/apis.yml
+created: '2026-08-19'
+modified: '2026-08-19'
+specificationVersion: '0.23'
+tags:
+- Football
+- Soccer
+- Sports
+- Sports Data
+- Live Scores
+- Fixtures
+- Standings
+- Statistics
+- Odds
+- Bookmakers
+apis:
+- aid: 5dollarfootballapi:5dollarfootballapi-bookmakers-api
+  name: 5DollarFootballAPI Bookmakers API
+  description: The bookmakers quoted by the odds endpoints.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - bookmakers
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-countries-api
+  name: 5DollarFootballAPI Countries API
+  description: The country master referenced by league and team records.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - countries
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-countries-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-fixtures-api
+  name: 5DollarFootballAPI Fixtures API
+  description: >-
+    Matches: the daily window and per-fixture detail — events, statistics, odds and odds history.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - fixtures
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-fixtures-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-leagues-api
+  name: 5DollarFootballAPI Leagues API
+  description: Competitions and their seasons, plus a whole season of fixtures.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - leagues
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-leagues-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-standings-api
+  name: 5DollarFootballAPI Standings API
+  description: League tables — points, and the corner and card tables.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - standings
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-standings-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-status-api
+  name: 5DollarFootballAPI Status API
+  description: Your plan, limits and usage.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - status
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-status-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+- aid: 5dollarfootballapi:5dollarfootballapi-teams-api
+  name: 5DollarFootballAPI Teams API
+  description: Clubs and national teams, plus their fixture history.
+  humanURL: https://5dollarfootballapi.com/docs
+  baseURL: https://api.5dollarfootballapi.com/v1
+  tags:
+  - teams
+  properties:
+  - type: OpenAPI
+    url: openapi/5dollarfootballapi-teams-api-openapi.yml
+  - type: X-OpenAPI-Source
+    url: https://5dollarfootballapi.com/openapi.json
+  - type: Documentation
+    url: https://5dollarfootballapi.com/docs
+  - type: LlmsText
+    url: https://5dollarfootballapi.com/llms.txt
+common:
+- type: Website
+  url: https://5dollarfootballapi.com
+- type: DeveloperPortal
+  url: https://5dollarfootballapi.com/docs
+- type: Documentation
+  url: https://5dollarfootballapi.com/docs
+- type: APIReference
+  url: https://5dollarfootballapi.com/docs
+- type: OpenAPI
+  url: https://5dollarfootballapi.com/openapi.json
+- type: APIsJSON
+  url: https://5dollarfootballapi.com/apis.json
+- type: LlmsText
+  url: https://5dollarfootballapi.com/llms.txt
+- type: Pricing
+  url: https://5dollarfootballapi.com/pricing
+- type: SignUp
+  url: https://5dollarfootballapi.com/signup
+- type: ChangeLog
+  url: https://5dollarfootballapi.com/docs/changelog
+- type: TermsOfService
+  url: https://5dollarfootballapi.com/terms
+- type: PrivacyPolicy
+  url: https://5dollarfootballapi.com/privacy
+maintainers:
+- FN: 5DollarFootballAPI
+  url: https://5dollarfootballapi.com
+x-evidence:
+  round: '2026-08-19'
+  admitted_from: Add-API parked queue. Submitted TWICE — e9f4ce5d 04:48 UTC (confidence 8) and 9ebe84a1
+    07:24 UTC (confidence 3), same slug, both parked no_consumable_surface.
+  why_the_gate_was_wrong: 'Both dossiers state the domain was "unreachable on every request" with "zero
+    web footprint". That was not true when checked at 2026-08-19 ~10:15 UTC: the homepage, all seven declared
+    pointers, the apis.json, the llms.txt and a valid 169KB OpenAPI all return 200. The site was most
+    likely not yet live when they submitted, and they resubmitted three hours later. The gate declined
+    a real provider for a transient reason.'
+  verified_2026_08_19:
+    openapi.json: 200 application/json 169,269b — valid OpenAPI 3.1.0, 15 paths, 15 operations, 7 declared
+      tags, securitySchemes bearerAuth + apiKeyHeader
+    llms.txt: 200 text/plain 6,106b — real, not an HTML error page
+    apis.json: 200 application/json 2,771b
+    seven_declared_pointers: docs, openapi.json, pricing, signup, docs/changelog, terms, privacy — all
+      200 with DISTINCT md5s and sizes, so not an SPA catch-all
+    negative_control: https://5dollarfootballapi.com/zzz-not-real-9137 -> 404, so the 200s above are genuine
+  defect_to_report: 'Their apis.json carries created: 2026-08-19 with modified: 2026-08-01 — modified
+    precedes created. The gate flagged this correctly and it is worth telling them.'
+  not_credited: api.5dollarfootballapi.com/v1 returns the website 404 page rather than an API root. Noted,
+    not scored — a 404 on an API host root is normal.

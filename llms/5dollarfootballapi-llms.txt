@@ -1,0 +1,39 @@
+# 5DollarFootballAPI
+
+> The affordable football API — the same data, from $5/mo. A read-only REST API for football (soccer) data: live scores, fixtures, standings, team statistics, match events, corner and card statistics, and bookmaker odds including tick-level price history. Responses are JSON; authenticate with an API key in an Authorization: Bearer header.
+
+Plans: Free — 1 request / min, the five big leagues with live scores and standings. No credit card. Pro — $5/month, 10 requests / min, 130+ competitions with odds. Ultra — $25/month, 40 requests / min, all leagues plus full odds history back to 2014. Business — custom rate limits.
+
+## API description
+
+- [OpenAPI description](https://5dollarfootballapi.com/openapi.json): machine-readable description of every /v1 endpoint.
+- [APIs.json manifest](https://5dollarfootballapi.com/apis.json): discovery manifest for API directories.
+- [Documentation](https://5dollarfootballapi.com/docs): endpoint reference, authentication, rate limits, pagination and errors.
+- [Changelog](https://5dollarfootballapi.com/docs/changelog): what changed in the API and when.
+- [League coverage](https://5dollarfootballapi.com/docs/league-coverage): every competition, with ids, and which plan reaches it.
+
+## Endpoints
+
+- [GET /v1/fixtures](https://5dollarfootballapi.com/docs/fixtures): List fixtures. The window view: fixtures and results for a time window of up to 24 hours (default: today UTC), or every in-play match with ?status=live. For a whole season or one team's matches, see /v1/leagues/{id}/fixtures and /v1/teams/{id}/fixtures. Add ?include=odds,events,stats to expand every row in place — one call per screen, not one call per match. How far back you can query follows your plan: 3 months on Free, 12 months on Pro, back to 2014 on Ultra.
+- [GET /v1/fixtures/{id}](https://5dollarfootballapi.com/docs/fixture): Get a fixture. A single fixture with goals, corners, cards and odds lines. Add ?include=events,stats to fold the event timeline and in-play statistics into the same call.
+- [GET /v1/fixtures/{id}/odds](https://5dollarfootballapi.com/docs/odds): Fixture odds. Full prices for every market, one entry per requested bookmaker — each of opening, closing and in-play carries the line and both prices. Bet365 (the default) serves eleven markets: 1X2 plus Asian handicap, goal, corner, corner-Asian and card lines — full-time and half-time — and both-teams-to-score. Add more books with ?bookmakers=bet365,pinnacle,… (GET /v1/bookmakers) — they carry 1X2, Asian handicap, goal line and corner line where recorded. Bookmakers beyond bet365 require the Ultra plan.
+- [GET /v1/bookmakers](https://5dollarfootballapi.com/docs/bookmakers): List bookmakers. The bookmakers accepted by ?bookmakers= on /v1/fixtures/{id}/odds, in display order. Bet365 carries all ten markets and comes with every paid plan; the rest require Ultra — the coverage table on the docs index shows what each carries.
+- [GET /v1/fixtures/{id}/odds/history](https://5dollarfootballapi.com/docs/odds-history): Odds movement history. The full pre-match and in-play tick history for one market — every recorded price/line change with the score at that moment. Bet365 (the default) carries twelve markets: 1X2, Asian handicap, goal line and corner line (each full-time and half-time), plus corner Asian handicap, card line, card Asian handicap and both-teams-to-score. Any other bookmaker (?bookmaker=, one at a time) carries 1x2, asian, goalline and corner. Ultra plan and above.
+- [GET /v1/fixtures/{id}/events](https://5dollarfootballapi.com/docs/events): Fixture events. The chronological match timeline: goals, corners, yellow and red cards, substitutions, missed penalties, and half-time / full-time period scores — corners included, which most football APIs leave out.
+- [GET /v1/fixtures/{id}/statistics](https://5dollarfootballapi.com/docs/statistics): Fixture statistics. Live match statistics: attacks, shots and possession — with first-half splits.
+- [GET /v1/standings](https://5dollarfootballapi.com/docs/standings): Standings. League tables by season, plus corner and card tables via ?type. Corner tables include first-half splits; card tables split yellows and reds.
+- [GET /v1/countries](https://5dollarfootballapi.com/docs/countries): List countries. The country master referenced by league and team country_id.
+- [GET /v1/leagues](https://5dollarfootballapi.com/docs/leagues): List leagues. Competitions, filterable by popularity, country or search.
+- [GET /v1/leagues/{id}](https://5dollarfootballapi.com/docs/league): Get a league. A single competition, with its seasons newest first — the valid ?season= values for /v1/leagues/{id}/fixtures and /v1/standings. Exactly one season is marked current.
+- [GET /v1/leagues/{id}/fixtures](https://5dollarfootballapi.com/docs/league-fixtures): League fixtures. A full season of one league's fixtures and results — the bulk entry point for historical data and backtesting. Defaults to the newest season that has fixtures; pass ?season for a specific one. Supports the same include, status and lang options as /v1/fixtures.
+- [GET /v1/teams/{id}](https://5dollarfootballapi.com/docs/team): Get a team. A single team.
+- [GET /v1/teams/{id}/fixtures](https://5dollarfootballapi.com/docs/team-fixtures): Team fixtures. One team's matches, home and away, most recent first — recent form, head-to-head material and upcoming games in one list. Supports the same include, status and lang options as /v1/fixtures.
+- [GET /v1/status](https://5dollarfootballapi.com/docs/status): Account status. Your plan, limits and today's usage.
+
+## About
+
+- [Pricing](https://5dollarfootballapi.com/pricing): plan limits and prices.
+- [Free tier](https://5dollarfootballapi.com/free-football-api): what a free key reaches, and how to get one.
+- [Get an API key](https://5dollarfootballapi.com/signup): sign up and receive a free key immediately.
+- [Coverage](https://5dollarfootballapi.com/coverage): competition counts by region.
+- [Contact](https://5dollarfootballapi.com/contact): support and sales.

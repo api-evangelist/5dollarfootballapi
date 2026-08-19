@@ -1,0 +1,25 @@
+{
+  "provider": "5dollarfootballapi",
+  "sources": [
+    "5dollarfootballapi-openapi.json"
+  ],
+  "outputs": [
+    "5dollarfootballapi-bookmakers-api-openapi.yml",
+    "5dollarfootballapi-countries-api-openapi.yml",
+    "5dollarfootballapi-fixtures-api-openapi.yml",
+    "5dollarfootballapi-leagues-api-openapi.yml",
+    "5dollarfootballapi-standings-api-openapi.yml",
+    "5dollarfootballapi-status-api-openapi.yml",
+    "5dollarfootballapi-teams-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/5dollarfootballapi-openapi.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "5dollarfootballapi-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+7 apis, 7 total)"
+  ],
+  "skipped": []
+}

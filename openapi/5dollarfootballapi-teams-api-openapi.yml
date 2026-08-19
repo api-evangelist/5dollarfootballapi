@@ -1,0 +1,359 @@
+openapi: 3.2.0
+info:
+  title: 5DollarFootballAPI — Football Data Teams API
+  version: 1.0.0
+  summary: 'Football (soccer) data: live scores, fixtures, standings, corner and card statistics, and odds.'
+  description: 'The 5DollarFootballAPI is a read-only REST API. Every response is JSON with a top-level "success" flag. All timestamps are UTC (ISO-8601). The base URL is https://api.5dollarfootballapi.com/v1.
+
+
+    Authenticate every request with your API key in an Authorization header: `Authorization: Bearer fb_live_your_key`. You can also send it as `X-API-Key`. Get a key by creating a free account — no card required. Keys are shown once; store them securely and never embed them in public client-side code.
+
+
+    Each plan has a per-minute rate window — short parallel bursts are fine as long as the minute total holds, and there are no daily caps or monthly pools. Every response includes `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` for the current window. When you exceed the limit you get HTTP 429 with a `Retry-After` header — back off and retry.
+
+
+    List endpoints accept `page` (default 1) and `per_page` (default 50, max 100), and return a `pagination` object: `{ page, per_page, count, has_more }`. Keep requesting the next page while `has_more` is true. The underlying set can change between two page requests (a match kicks off or finishes); for the volatile live view, request `status=live` with a large `per_page` (up to 500) so a single page holds everything.
+
+
+    Errors return `{ "success": 0, "error": { ... } }` with an HTTP status. The error object has a machine-readable `type` and `code`, a human `message`, an optional `param`, a `doc_url`, and a `request_id` to quote in support. We never return a silent `200` with empty data for a missing resource — you get a proper 404.'
+  termsOfService: https://5dollarfootballapi.com/terms
+  contact:
+    name: 5DollarFootballAPI support
+    url: https://5dollarfootballapi.com/contact
+    email: contact@5dollarfootballapi.com
+servers:
+- url: https://api.5dollarfootballapi.com/v1
+  description: Production
+security:
+- bearerAuth: []
+- apiKeyHeader: []
+tags:
+- name: teams
+  description: Clubs and national teams, plus their fixture history.
+paths:
+  /teams/{id}:
+    get:
+      operationId: team
+      summary: Get a team
+      description: A single team.
+      tags:
+      - teams
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Team id.
+        schema:
+          type: integer
+      - name: lang
+        in: query
+        required: false
+        description: Localize the team name (21 languages, English fallback).
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-RateLimit-Limit:
+              description: Requests allowed in the current window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Requests left in the current window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Unix timestamp when the window resets.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessEnvelope'
+              example:
+                success: 1
+                data:
+                  id: 594
+                  name: Pyunik Yerevan
+        '400':
+          description: Invalid parameter.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '401':
+          description: Missing or invalid API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '403':
+          description: The resource is outside your plan.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '404':
+          description: No such resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+          headers:
+            Retry-After:
+              description: Seconds to wait before retrying.
+              schema:
+                type: integer
+        '500':
+          description: Unexpected server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+      externalDocs:
+        description: Endpoint reference
+        url: https://5dollarfootballapi.com/docs/team
+  /teams/{id}/fixtures:
+    get:
+      operationId: teamFixtures
+      summary: Team fixtures
+      description: One team's matches, home and away, most recent first — recent form, head-to-head material and upcoming games in one list. Supports the same include, status and lang options as /v1/fixtures.
+      tags:
+      - teams
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Team id.
+        schema:
+          type: integer
+      - name: status
+        in: query
+        required: false
+        description: all | scheduled | live | finished. Defaults to all; "scheduled" lists upcoming games, "finished" past results.
+        schema:
+          type: string
+      - name: start_time
+        in: query
+        required: false
+        description: Narrow to a [start_time, end_time) kickoff window — unix seconds, UTC, start inclusive, end exclusive, no span limit.
+        schema:
+          type: integer
+      - name: end_time
+        in: query
+        required: false
+        description: Narrow to a [start_time, end_time) kickoff window — unix seconds, UTC, start inclusive, end exclusive, no span limit.
+        schema:
+          type: integer
+      - name: include
+        in: query
+        required: false
+        description: Comma list of odds | events | stats — same as /v1/fixtures. Caps per_page at 50.
+        schema:
+          type: string
+      - name: lang
+        in: query
+        required: false
+        description: Localize team & league names (21 languages, English fallback).
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        description: Pagination (per_page max 100; 50 with include). Matches are ordered by kickoff, newest first.
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        required: false
+        description: Pagination (per_page max 100; 50 with include). Matches are ordered by kickoff, newest first.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-RateLimit-Limit:
+              description: Requests allowed in the current window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Requests left in the current window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Unix timestamp when the window resets.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessEnvelope'
+              example:
+                success: 1
+                data:
+                - id: 197508211
+                  league:
+                    id: 39
+                    name: Premier League
+                  teams:
+                    home:
+                      id: 2618
+                      name: Arsenal
+                    away:
+                      id: 2622
+                      name: Everton
+                  kickoff_utc: '2026-08-08T14:00:00+00:00'
+                  kickoff_ts: 1786197600
+                  status: finished
+                  goals:
+                    home: 2
+                    away: 0
+                  corners:
+                    home: 8
+                    away: 3
+                  cards:
+                    home:
+                      yellow: 1
+                      red: 0
+                    away:
+                      yellow: 2
+                      red: 0
+                pagination:
+                  page: 1
+                  per_page: 50
+                  count: 1
+                  has_more: true
+        '400':
+          description: Invalid parameter.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '401':
+          description: Missing or invalid API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '403':
+          description: The resource is outside your plan.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '404':
+          description: No such resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+          headers:
+            Retry-After:
+              description: Seconds to wait before retrying.
+              schema:
+                type: integer
+        '500':
+          description: Unexpected server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+      externalDocs:
+        description: Endpoint reference
+        url: https://5dollarfootballapi.com/docs/team-fixtures
+components:
+  schemas:
+    SuccessEnvelope:
+      type: object
+      description: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
+      required:
+      - success
+      - data
+      properties:
+        success:
+          type: integer
+          const: 1
+        data:
+          description: 'Endpoint payload: an object, or an array of objects on list endpoints.'
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Pagination:
+      type: object
+      description: Returned by list endpoints. Keep requesting pages while `has_more` is true.
+      properties:
+        page:
+          type: integer
+        per_page:
+          type: integer
+        count:
+          type: integer
+          description: Rows on this page.
+        has_more:
+          type: boolean
+    ErrorEnvelope:
+      type: object
+      description: Every error response. The status code and `error.code` identify the failure; `message` is for humans.
+      required:
+      - success
+      - error
+      properties:
+        success:
+          type: integer
+          const: 0
+        error:
+          type: object
+          required:
+          - type
+          - code
+          - message
+          properties:
+            type:
+              type: string
+              description: Error family, e.g. authentication_error.
+            code:
+              type: string
+              description: Machine-readable code, e.g. missing_api_key.
+            message:
+              type: string
+            param:
+              type:
+              - string
+              - 'null'
+              description: The parameter at fault, when one applies.
+            doc_url:
+              type: string
+            request_id:
+              type: string
+              description: Quote this in support requests.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Send your key as `Authorization: Bearer <key>`.'
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: Alternative to the Authorization header.
+externalDocs:
+  description: Full documentation
+  url: https://5dollarfootballapi.com/docs
