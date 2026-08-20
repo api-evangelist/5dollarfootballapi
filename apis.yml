@@ -26,6 +26,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Bookmakers
+  tags_raw:
   - bookmakers
   properties:
   - type: OpenAPI
@@ -42,6 +44,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Countries
+  tags_raw:
   - countries
   properties:
   - type: OpenAPI
@@ -59,6 +63,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Fixtures
+  tags_raw:
   - fixtures
   properties:
   - type: OpenAPI
@@ -75,6 +81,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Leagues
+  tags_raw:
   - leagues
   properties:
   - type: OpenAPI
@@ -91,6 +99,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Standings
+  tags_raw:
   - standings
   properties:
   - type: OpenAPI
@@ -107,6 +117,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Status
+  tags_raw:
   - status
   properties:
   - type: OpenAPI
@@ -123,6 +135,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Team
+  tags_raw:
   - teams
   properties:
   - type: OpenAPI
