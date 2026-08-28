@@ -5,6 +5,18 @@ description: A read-only REST football (soccer) data API covering live scores, f
   check. Fifteen operations across seven tags, served from a single versioned host under bearer-token
   or API-key authentication. Positioned on price — the pitch is the same data from $5/month.
 url: https://raw.githubusercontent.com/api-evangelist/5dollarfootballapi/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 created: '2026-08-19'
 modified: '2026-08-19'
 specificationVersion: '0.23'
