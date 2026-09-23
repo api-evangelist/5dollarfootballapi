@@ -1,7 +1,7 @@
 {
   "provider": "5dollarfootballapi",
   "sources": [
-    "5dollarfootballapi-openapi.json"
+    "_original/5dollarfootballapi-openapi-2026-08-19.json"
   ],
   "outputs": [
     "5dollarfootballapi-bookmakers-api-openapi.yml",
@@ -12,14 +12,21 @@
     "5dollarfootballapi-status-api-openapi.yml",
     "5dollarfootballapi-teams-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/5dollarfootballapi-openapi.json"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "5dollarfootballapi-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: written (+7 apis, 7 total)"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "5dollarfootballapi-openapi-2026-08-19.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "5dollarfootballapi-bookmakers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-countries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-fixtures-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-leagues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-standings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-status-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "5dollarfootballapi-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

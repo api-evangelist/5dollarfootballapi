@@ -3,19 +3,7 @@ info:
   title: 5DollarFootballAPI — Football Data Countries API
   version: 1.0.0
   summary: 'Football (soccer) data: live scores, fixtures, standings, corner and card statistics, and odds.'
-  description: 'The 5DollarFootballAPI is a read-only REST API. Every response is JSON with a top-level "success" flag. All timestamps are UTC (ISO-8601). The base URL is https://api.5dollarfootballapi.com/v1.
-
-
-    Authenticate every request with your API key in an Authorization header: `Authorization: Bearer fb_live_your_key`. You can also send it as `X-API-Key`. Get a key by creating a free account — no card required. Keys are shown once; store them securely and never embed them in public client-side code.
-
-
-    Each plan has a per-minute rate window — short parallel bursts are fine as long as the minute total holds, and there are no daily caps or monthly pools. Every response includes `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` for the current window. When you exceed the limit you get HTTP 429 with a `Retry-After` header — back off and retry.
-
-
-    List endpoints accept `page` (default 1) and `per_page` (default 50, max 100), and return a `pagination` object: `{ page, per_page, count, has_more }`. Keep requesting the next page while `has_more` is true. The underlying set can change between two page requests (a match kicks off or finishes); for the volatile live view, request `status=live` with a large `per_page` (up to 500) so a single page holds everything.
-
-
-    Errors return `{ "success": 0, "error": { ... } }` with an HTTP status. The error object has a machine-readable `type` and `code`, a human `message`, an optional `param`, a `doc_url`, and a `request_id` to quote in support. We never return a silent `200` with empty data for a missing resource — you get a proper 404.'
+  description: The 5DollarFootballAPI is a read-only REST API.
   termsOfService: https://5dollarfootballapi.com/terms
   contact:
     name: 5DollarFootballAPI support
@@ -28,7 +16,7 @@ security:
 - bearerAuth: []
 - apiKeyHeader: []
 tags:
-- name: countries
+- name: Countries
   description: The country master referenced by league and team records.
 paths:
   /countries:
@@ -37,7 +25,7 @@ paths:
       summary: List countries
       description: The country master referenced by league and team country_id.
       tags:
-      - countries
+      - Countries
       parameters:
       - name: search
         in: query

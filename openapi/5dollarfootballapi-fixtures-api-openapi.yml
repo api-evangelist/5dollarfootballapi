@@ -3,19 +3,7 @@ info:
   title: 5DollarFootballAPI — Football Data Fixtures API
   version: 1.0.0
   summary: 'Football (soccer) data: live scores, fixtures, standings, corner and card statistics, and odds.'
-  description: 'The 5DollarFootballAPI is a read-only REST API. Every response is JSON with a top-level "success" flag. All timestamps are UTC (ISO-8601). The base URL is https://api.5dollarfootballapi.com/v1.
-
-
-    Authenticate every request with your API key in an Authorization header: `Authorization: Bearer fb_live_your_key`. You can also send it as `X-API-Key`. Get a key by creating a free account — no card required. Keys are shown once; store them securely and never embed them in public client-side code.
-
-
-    Each plan has a per-minute rate window — short parallel bursts are fine as long as the minute total holds, and there are no daily caps or monthly pools. Every response includes `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` for the current window. When you exceed the limit you get HTTP 429 with a `Retry-After` header — back off and retry.
-
-
-    List endpoints accept `page` (default 1) and `per_page` (default 50, max 100), and return a `pagination` object: `{ page, per_page, count, has_more }`. Keep requesting the next page while `has_more` is true. The underlying set can change between two page requests (a match kicks off or finishes); for the volatile live view, request `status=live` with a large `per_page` (up to 500) so a single page holds everything.
-
-
-    Errors return `{ "success": 0, "error": { ... } }` with an HTTP status. The error object has a machine-readable `type` and `code`, a human `message`, an optional `param`, a `doc_url`, and a `request_id` to quote in support. We never return a silent `200` with empty data for a missing resource — you get a proper 404.'
+  description: The 5DollarFootballAPI is a read-only REST API.
   termsOfService: https://5dollarfootballapi.com/terms
   contact:
     name: 5DollarFootballAPI support
@@ -28,7 +16,7 @@ security:
 - bearerAuth: []
 - apiKeyHeader: []
 tags:
-- name: fixtures
+- name: Fixtures
   description: 'Matches: the daily window and per-fixture detail — events, statistics, odds and odds history.'
 paths:
   /fixtures:
@@ -37,7 +25,7 @@ paths:
       summary: List fixtures
       description: 'The window view: fixtures and results for a time window of up to 24 hours (default: today UTC), or every in-play match with ?status=live. For a whole season or one team''s matches, see /v1/leagues/{id}/fixtures and /v1/teams/{id}/fixtures. Add ?include=odds,events,stats to expand every row in place — one call per screen, not one call per match. How far back you can query follows your plan: 3 months on Free, 12 months on Pro, back to 2014 on Ultra.'
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: start_time
         in: query
@@ -306,7 +294,7 @@ paths:
       summary: Get a fixture
       description: A single fixture with goals, corners, cards and odds lines. Add ?include=events,stats to fold the event timeline and in-play statistics into the same call.
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: id
         in: path
@@ -546,7 +534,7 @@ paths:
       summary: Fixture odds
       description: 'Full prices for every market, one entry per requested bookmaker — each of opening, closing and in-play carries the line and both prices. Bet365 (the default) serves eleven markets: 1X2 plus Asian handicap, goal, corner, corner-Asian and card lines — full-time and half-time — and both-teams-to-score. Add more books with ?bookmakers=bet365,pinnacle,… (GET /v1/bookmakers) — they carry 1X2, Asian handicap, goal line and corner line where recorded. Bookmakers beyond bet365 require the Ultra plan.'
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: id
         in: path
@@ -762,7 +750,7 @@ paths:
       summary: Odds movement history
       description: 'The full pre-match and in-play tick history for one market — every recorded price/line change with the score at that moment. Bet365 (the default) carries twelve markets: 1X2, Asian handicap, goal line and corner line (each full-time and half-time), plus corner Asian handicap, card line, card Asian handicap and both-teams-to-score. Any other bookmaker (?bookmaker=, one at a time) carries 1x2, asian, goalline and corner. Ultra plan and above.'
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: id
         in: path
@@ -967,7 +955,7 @@ paths:
       summary: Fixture events
       description: 'The chronological match timeline: goals, corners, yellow and red cards, substitutions, missed penalties, and half-time / full-time period scores — corners included, which most football APIs leave out.'
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: id
         in: path
@@ -1087,7 +1075,7 @@ paths:
       summary: Fixture statistics
       description: 'Live match statistics: attacks, shots and possession — with first-half splits.'
       tags:
-      - fixtures
+      - Fixtures
       parameters:
       - name: id
         in: path
