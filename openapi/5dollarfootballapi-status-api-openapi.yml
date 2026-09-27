@@ -96,38 +96,6 @@ paths:
         url: https://5dollarfootballapi.com/docs/status
 components:
   schemas:
-    SuccessEnvelope:
-      type: object
-      description: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
-      required:
-      - success
-      - data
-      properties:
-        success:
-          type: integer
-          const: 1
-        data:
-          description: 'Endpoint payload: an object, or an array of objects on list endpoints.'
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        pagination:
-          $ref: '#/components/schemas/Pagination'
-    Pagination:
-      type: object
-      description: Returned by list endpoints. Keep requesting pages while `has_more` is true.
-      properties:
-        page:
-          type: integer
-        per_page:
-          type: integer
-        count:
-          type: integer
-          description: Rows on this page.
-        has_more:
-          type: boolean
     ErrorEnvelope:
       type: object
       description: Every error response. The status code and `error.code` identify the failure; `message` is for humans.
@@ -163,6 +131,38 @@ components:
             request_id:
               type: string
               description: Quote this in support requests.
+    Pagination:
+      type: object
+      description: Returned by list endpoints. Keep requesting pages while `has_more` is true.
+      properties:
+        page:
+          type: integer
+        per_page:
+          type: integer
+        count:
+          type: integer
+          description: Rows on this page.
+        has_more:
+          type: boolean
+    SuccessEnvelope:
+      type: object
+      description: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
+      required:
+      - success
+      - data
+      properties:
+        success:
+          type: integer
+          const: 1
+        data:
+          description: 'Endpoint payload: an object, or an array of objects on list endpoints.'
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        pagination:
+          $ref: '#/components/schemas/Pagination'
   securitySchemes:
     bearerAuth:
       type: http
