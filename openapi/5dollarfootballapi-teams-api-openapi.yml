@@ -265,25 +265,6 @@ paths:
         url: https://5dollarfootballapi.com/docs/team-fixtures
 components:
   schemas:
-    SuccessEnvelope:
-      type: object
-      description: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
-      required:
-      - success
-      - data
-      properties:
-        success:
-          type: integer
-          const: 1
-        data:
-          description: 'Endpoint payload: an object, or an array of objects on list endpoints.'
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        pagination:
-          $ref: '#/components/schemas/Pagination'
     ErrorEnvelope:
       type: object
       description: Every error response. The status code and `error.code` identify the failure; `message` is for humans.
@@ -332,6 +313,25 @@ components:
           description: Rows on this page.
         has_more:
           type: boolean
+    SuccessEnvelope:
+      type: object
+      description: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
+      required:
+      - success
+      - data
+      properties:
+        success:
+          type: integer
+          const: 1
+        data:
+          description: 'Endpoint payload: an object, or an array of objects on list endpoints.'
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        pagination:
+          $ref: '#/components/schemas/Pagination'
   securitySchemes:
     bearerAuth:
       type: http
