@@ -1,0 +1,12 @@
+{
+ "url": "https://5dollarfootballapi.com/openapi.json",
+ "requested_url": "https://5dollarfootballapi.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 196130,
+ "sha256": "2be073314bb26dad12a69ae508ad6886830fa0a6ec78fc7630fa5ed707519522",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.938), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
