@@ -18,7 +18,7 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 created: '2026-08-19'
-modified: '2026-08-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 tags:
 - Football
@@ -160,6 +160,8 @@ apis:
   - type: LlmsText
     url: https://5dollarfootballapi.com/llms.txt
 common:
+- url: https://5dollarfootballapi.com/blog
+  type: Blog
 - type: Website
   url: https://5dollarfootballapi.com
 - type: DeveloperPortal
