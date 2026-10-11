@@ -1,0 +1,88 @@
+generated: '2026-10-11'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://5dollarfootballapi.com/docs/changelog
+sources:
+- https://5dollarfootballapi.com/docs/changelog
+entries:
+- breaking: false
+  highlights:
+  - Priced odds on the live list
+  - 'New include=odds_full on GET /v1/fixtures?status=live: every in‑play match gains an odds_full block with all eleven Bet365 markets and their
+    opening, closing and in‑play prices, in the same shape as the bet365 entry of /v1/fixtures/{id}/odds.'
+  - One call prices every live match instead of one call per match.
+  - The include=odds block is unchanged, and the two can be asked for together.
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Hosted MCP server
+  - 'New (7 October): a hosted MCP server at https://mcp.5dollarfootballapi.com, so Claude, ChatGPT, Cursor and other MCP clients can query the
+    API directly.'
+  - Add https://mcp.5dollarfootballapi.com/mcp/<your-api-key> as a custom connector, or send the key as a Bearer header to /mcp.
+  - Nothing to install; calls use your own key and count against your own plan.
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Half-time ticks in odds history
+  - 'Fix on /v1/fixtures/{id}/odds/history, every bookmaker and market (6 October): a tick recorded during the half‑time break came back with
+    "minute": 0, the same value as a tick at kickoff, so the minute ran 45, 0, 0, 45, 46 across the interval.'
+  - 'Those ticks now carry "minute": 45 and "half_time": true — the flag appears on half‑time ticks only.'
+  - If you worked around it by treating an in‑play minute 0 after minute 45 as the break, switch to the flag.
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Clearer season errors
+  - season_not_found now names the league's newest seasons (4 October), on /v1/standings and /v1/leagues/{id}/fixtures alike.
+  - Seasons are named as /v1/leagues/{id} lists them — 26/27 for leagues spanning two years, 2026 for calendar‑year ones — and the standings reference
+    no longer suggests a plain year for every league.
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Hong Kong Jockey Club
+  - 'The Hong Kong Jockey Club (HKJC) is now a bookmaker: hkjc on GET /v1/bookmakers, ?bookmakers= on /v1/fixtures/{id}/odds and ?bookmaker= on
+    /v1/fixtures/{id}/odds/history.'
+  - It carries 1X2 (pre‑match)
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Focused fixtures endpoints
+  - New GET /v1/leagues/{id}/fixtures — a full season of league fixtures (defaults to the newest season with fixtures), the bulk entry point for
+    historical data.
+  - New GET /v1/teams/{id}/fixtures — one team's matches home and away, most recent first.
+  - '/v1/fixtures is now the window view: start_time / end_time unix timestamps bound a window of up to 24 hours (default: today UTC), so any
+    timezone''s "today" is one call.'
+  date: '2026-08-01'
+- breaking: false
+  highlights:
+  - Kickoff timestamps
+  - New kickoff_ts field — unix seconds, UTC — alongside kickoff_utc on every fixture payload, so comparisons and backtest math need no date parsing.
+  date: '2026-08-01'
+- breaking: false
+  highlights:
+  - Short-form odds lines
+  - 'All odds lines are now single short‑form numbers: split bookmaker quotes are averaged ("0.0, -0.5" becomes -0.25) on every endpoint, tick
+    history included.'
+  - Card lines (card_line, card_asian) are now part of the odds include on /v1/fixtures.
+  date: '2026-08-01'
+- breaking: false
+  highlights:
+  - Compound requests
+  - 'New include parameter on /v1/fixtures and /v1/fixtures/{id} — expand odds, events and in‑play stats inline: one call per screen, not one
+    call per match.'
+  date: '2026-08-01'
+- breaking: false
+  highlights:
+  - Localization & esoccer filter
+  - New lang parameter on fixtures, leagues, teams, standings and countries — team, league and country names in 21 languages besides English.
+  - New esports parameter on /v1/fixtures and /v1/leagues — esoccer (e‑football) leagues are excluded by default, opt in with include or only.
+  date: '2026-07-01'
+- breaking: false
+  highlights:
+  - v1 launched
+  - 'Public launch: fixtures, live scores, odds (pre‑match + in‑play with opening lines and tick history), corners, cards, standings, match events,
+    leagues, teams and countries.'
+  - API key authentication, transparent rate limits and a uniform JSON envelope.
+  date: '2026-07-01'
+note: The page lists changelog entries by month and year without explicit version numbers; therefore versioning scheme and current version are
+  not provided.
+docs: https://5dollarfootballapi.com/docs/changelog

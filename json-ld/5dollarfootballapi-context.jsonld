@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@vocab": "https://5dollarfootballapi.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "5dollarfootballapi": "https://5dollarfootballapi.com/schema#",
+    "ErrorEnvelope": "5dollarfootballapi:ErrorEnvelope",
+    "success": {
+      "@id": "5dollarfootballapi:success",
+      "@type": "xsd:integer"
+    },
+    "error": {
+      "@id": "5dollarfootballapi:error"
+    },
+    "Pagination": "5dollarfootballapi:Pagination",
+    "page": {
+      "@id": "5dollarfootballapi:page",
+      "@type": "xsd:integer"
+    },
+    "per_page": {
+      "@id": "5dollarfootballapi:per_page",
+      "@type": "xsd:integer"
+    },
+    "count": {
+      "@id": "5dollarfootballapi:count",
+      "@type": "xsd:integer"
+    },
+    "has_more": {
+      "@id": "5dollarfootballapi:has_more",
+      "@type": "xsd:boolean"
+    },
+    "SuccessEnvelope": "5dollarfootballapi:SuccessEnvelope",
+    "data": {
+      "@id": "5dollarfootballapi:data"
+    },
+    "pagination": {
+      "@id": "5dollarfootballapi:pagination",
+      "@type": "@id"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "5DollarFootballAPI API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects 5DollarFootballAPI's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-11) from openapi/5dollarfootballapi-bookmakers-api-openapi.yml, openapi/5dollarfootballapi-countries-api-openapi.yml, openapi/5dollarfootballapi-fixtures-api-openapi.yml.",
+  "dcterms:created": "2026-10-11",
+  "dcterms:source": [
+    "openapi/5dollarfootballapi-bookmakers-api-openapi.yml",
+    "openapi/5dollarfootballapi-countries-api-openapi.yml",
+    "openapi/5dollarfootballapi-fixtures-api-openapi.yml",
+    "openapi/5dollarfootballapi-leagues-api-openapi.yml",
+    "openapi/5dollarfootballapi-openapi.json"
+  ]
+}

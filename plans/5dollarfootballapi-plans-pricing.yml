@@ -1,0 +1,51 @@
+generated: '2026-10-11'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://5dollarfootballapi.com/pricing
+sources:
+- https://5dollarfootballapi.com/pricing
+- https://5dollarfootballapi.com/docs/league-coverage
+- https://5dollarfootballapi.com/docs/ultra-league-coverage
+name: 5DollarFootballAPI pricing
+audience: developer-api
+pricing_basis: per-call
+plans:
+- name: Free
+  price_text: $0
+  price: 0
+  description: Explore real football odds. The five big leagues, every Bet365 market, no credit card.
+  limits:
+  - name: requests_per_hour
+    limit_text: 60 requests / hour
+- name: Community Access
+  price_text: $0
+  price: 0
+  description: For students, researchers, early‑career developers and anyone building with no budget.
+  limits:
+  - name: requests_per_hour
+    limit_text: 300 requests / hour
+- name: Education Access
+  price_text: $0
+  price: 0
+  description: For schools and universities that teach with real data.
+  limits:
+  - name: requests_per_minute
+    limit_text: 10 requests / min
+- name: Pro
+  price_text: $5/mo
+  price: 5
+  description: Run a global production product. Every major league, batch odds, the $5 that names us.
+  limits:
+  - name: requests_per_minute
+    limit_text: 10 requests / min
+- name: Ultra
+  price_text: $25/mo
+  price: 25
+  description: Research every market movement. All leagues, 20 bookmakers, history back to 2014 for supported competitions.
+  limits:
+  - name: requests_per_minute
+    limit_text: 40 requests / min — up to 120
+- name: Business
+  price_text: Contact us
+  description: Bulk volume and custom data work for teams that depend on it.
+docs: https://5dollarfootballapi.com/pricing

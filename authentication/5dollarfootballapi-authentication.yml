@@ -1,0 +1,38 @@
+generated: '2026-10-11'
+method: derived
+source: openapi/5dollarfootballapi-bookmakers-api-openapi.yml, openapi/5dollarfootballapi-countries-api-openapi.yml,
+  openapi/5dollarfootballapi-fixtures-api-openapi.yml, openapi/5dollarfootballapi-leagues-api-openapi.yml,
+  openapi/5dollarfootballapi-standings-api-openapi.yml, openapi/5dollarfootballapi-status-api-openapi.yml,
+  openapi/5dollarfootballapi-teams-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'Send your key as `Authorization: Bearer <key>`.'
+  sources:
+  - openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+  - openapi/5dollarfootballapi-countries-api-openapi.yml
+  - openapi/5dollarfootballapi-fixtures-api-openapi.yml
+  - openapi/5dollarfootballapi-leagues-api-openapi.yml
+  - openapi/5dollarfootballapi-standings-api-openapi.yml
+  - openapi/5dollarfootballapi-status-api-openapi.yml
+  - openapi/5dollarfootballapi-teams-api-openapi.yml
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: Alternative to the Authorization header.
+  sources:
+  - openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+  - openapi/5dollarfootballapi-countries-api-openapi.yml
+  - openapi/5dollarfootballapi-fixtures-api-openapi.yml
+  - openapi/5dollarfootballapi-leagues-api-openapi.yml
+  - openapi/5dollarfootballapi-standings-api-openapi.yml
+  - openapi/5dollarfootballapi-status-api-openapi.yml
+  - openapi/5dollarfootballapi-teams-api-openapi.yml

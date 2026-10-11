@@ -1,0 +1,61 @@
+generated: '2026-10-11'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+- openapi/5dollarfootballapi-countries-api-openapi.yml
+- openapi/5dollarfootballapi-fixtures-api-openapi.yml
+- openapi/5dollarfootballapi-leagues-api-openapi.yml
+- openapi/5dollarfootballapi-standings-api-openapi.yml
+- openapi/5dollarfootballapi-status-api-openapi.yml
+- openapi/5dollarfootballapi-teams-api-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: ErrorEnvelope
+coverage:
+  operations: 15
+  statuses_declared: 6
+problems:
+- status: 400
+  title: Bad Request
+  description: Invalid parameter.
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorEnvelope
+- status: 401
+  title: Unauthorized
+  description: Missing or invalid API key.
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorEnvelope
+- status: 403
+  title: Forbidden
+  description: The resource is outside your plan.
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorEnvelope
+- status: 404
+  title: Not Found
+  description: No such resource.
+  operations: 9
+  media_types:
+  - application/json
+  schema: ErrorEnvelope
+- status: 429
+  title: Too Many Requests
+  description: Rate limit exceeded.
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorEnvelope
+- status: 500
+  title: Internal Server Error
+  description: Unexpected server error.
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorEnvelope

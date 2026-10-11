@@ -1,0 +1,59 @@
+generated: '2026-10-11'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 2
+  own: 2
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - website
+hosts:
+- host: 5dollarfootballapi.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TrustCenter
+  - StatusPage
+  - Blog
+  - Website
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - OpenAPI
+  - APIsJSON
+  - LlmsText
+  - Pricing
+  - SignUp
+  - ChangeLog
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - spec
+  - cdn
+  vendor: cloudflare
+  registrable_domain: 5dollarfootballapi.com
+  role: website
+  relation: own
+- host: api.5dollarfootballapi.com
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - api
+  registrable_domain: 5dollarfootballapi.com
+  role: api
+  relation: own

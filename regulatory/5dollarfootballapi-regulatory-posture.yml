@@ -1,0 +1,10 @@
+generated: '2026-10-11'
+method: probed
+source: https://5dollarfootballapi.com/privacy
+signals:
+  data_retention:
+    url: https://5dollarfootballapi.com/privacy
+    section: "Your choices"
+    note: "User can delete account; page journeys retained up to 400 days."
+    evidence:
+      - quote: "You can delete your account (and its keys and usage records) at any time. Deletion removes the account association from analytics records; page journeys are retained for no more than 400 days."

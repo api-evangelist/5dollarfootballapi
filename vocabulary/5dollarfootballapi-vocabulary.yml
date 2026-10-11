@@ -1,0 +1,65 @@
+generated: '2026-10-11'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+- openapi/5dollarfootballapi-countries-api-openapi.yml
+- openapi/5dollarfootballapi-fixtures-api-openapi.yml
+- openapi/5dollarfootballapi-leagues-api-openapi.yml
+- openapi/5dollarfootballapi-standings-api-openapi.yml
+vocabulary:
+  name: 5DollarFootballAPI Domain Vocabulary
+  description: 'Terms declared by 5DollarFootballAPI''s own API contract: its resource groups, objects and enumerations, with the contract''s
+    definitions. Derived, not authored.'
+  version: '2026-10-11'
+  terms:
+  - term: bookmakers
+    definition: The bookmakers quoted by the odds endpoints.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-bookmakers-api-openapi.yml
+  - term: Countries
+    definition: The country master referenced by league and team records.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-countries-api-openapi.yml
+  - term: Fixtures
+    definition: 'Matches: the daily window and per-fixture detail — events, statistics, odds and odds history.'
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-fixtures-api-openapi.yml
+  - term: Leagues
+    definition: Competitions and their seasons, plus a whole season of fixtures.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-leagues-api-openapi.yml
+  - term: Standings
+    definition: League tables — points, and the corner and card tables.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-standings-api-openapi.yml
+  - term: Status
+    definition: Your plan, limits and usage.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-status-api-openapi.yml
+  - term: Teams
+    definition: Clubs and national teams, plus their fixture history.
+    tags:
+    - Resource Group
+    source: openapi/5dollarfootballapi-teams-api-openapi.yml
+  - term: ErrorEnvelope
+    definition: Every error response. The status code and `error.code` identify the failure; `message` is for humans.
+    tags:
+    - Object
+    source: openapi/5dollarfootballapi-bookmakers-api-openapi.yml#/components/schemas/ErrorEnvelope
+  - term: Pagination
+    definition: Returned by list endpoints. Keep requesting pages while `has_more` is true.
+    tags:
+    - Object
+    source: openapi/5dollarfootballapi-bookmakers-api-openapi.yml#/components/schemas/Pagination
+  - term: SuccessEnvelope
+    definition: Every successful response. `data` is the endpoint payload — see the example on each operation. List endpoints add `pagination`.
+    tags:
+    - Object
+    source: openapi/5dollarfootballapi-bookmakers-api-openapi.yml#/components/schemas/SuccessEnvelope

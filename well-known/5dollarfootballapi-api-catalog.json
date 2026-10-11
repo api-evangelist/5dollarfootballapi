@@ -1,0 +1,46 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://api.5dollarfootballapi.com/v1",
+            "service-desc": [
+                {
+                    "href": "https://5dollarfootballapi.com/openapi.json",
+                    "type": "application/vnd.oai.openapi+json"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://5dollarfootballapi.com/docs",
+                    "type": "text/html"
+                }
+            ],
+            "service-meta": [
+                {
+                    "href": "https://5dollarfootballapi.com/apis.json",
+                    "type": "application/json"
+                }
+            ],
+            "status": [
+                {
+                    "href": "https://5dollarfootballapi.com/status.json",
+                    "type": "application/json"
+                }
+            ],
+            "terms-of-service": [
+                {
+                    "href": "https://5dollarfootballapi.com/terms",
+                    "type": "text/html"
+                }
+            ]
+        },
+        {
+            "anchor": "https://mcp.5dollarfootballapi.com/mcp",
+            "service-doc": [
+                {
+                    "href": "https://5dollarfootballapi.com/docs#mcp-server",
+                    "type": "text/html"
+                }
+            ]
+        }
+    ]
+}

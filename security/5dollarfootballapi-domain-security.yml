@@ -1,0 +1,21 @@
+generated: '2026-10-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: 5dollarfootballapi.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  8 08:57:21 2026 GMT
+  hsts: false
+- host: api.5dollarfootballapi.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  8 08:57:21 2026 GMT
+  hsts: null
+domains:
+- domain: 5dollarfootballapi.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
