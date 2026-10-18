@@ -259,6 +259,8 @@ apis:
   humanURL: https://5dollarfootballapi.com/docs
   baseURL: https://api.5dollarfootballapi.com/v1
   tags:
+  - Bookmakers
+  tags_raw:
   - bookmakers
   properties:
   - type: OpenAPI
