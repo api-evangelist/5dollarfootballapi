@@ -49,3 +49,47 @@ plans:
   price_text: Contact us
   description: Bulk volume and custom data work for teams that depend on it.
 docs: https://5dollarfootballapi.com/pricing
+x-canonical:
+  generated: '2026-10-18'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Community Access
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Education Access
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Ultra
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Business
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
