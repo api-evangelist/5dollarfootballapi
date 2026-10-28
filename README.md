@@ -1,4 +1,4 @@
-# 5DollarFootballAPI (5dollarfootballapi)
+# 5DollarFootballAPI
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,31 +64,132 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-A read-only REST football (soccer) data API — live scores, fixtures, standings, league and team
-surfaces, match events, and corner and card statistics, plus a bookmakers endpoint and a status
-check. Fifteen operations across seven tags, bearer-token or API-key authentication.
+A read‑only REST football (soccer) data API offering comprehensive live scores, detailed fixtures, league standings, team and player statistics, match events, corner and card data, as well as bookmaker odds and a status endpoint. It provides fifteen operations across seven tags, hosted on a versioned API under bearer‑token or API‑key authentication, priced affordably at $5 per month for developers seeking reliable sports data.
 
-**APIs.json:** [apis.yml](https://raw.githubusercontent.com/api-evangelist/5dollarfootballapi/refs/heads/main/apis.yml)
+**Areas:** Football · Soccer · Sports · Sports Data · Live Scores · Fixtures · Standings · Statistics · Odds · Bookmakers
 
-- **Website:** https://5dollarfootballapi.com
-- **Documentation:** https://5dollarfootballapi.com/docs
-- **OpenAPI:** https://5dollarfootballapi.com/openapi.json
-- **llms.txt:** https://5dollarfootballapi.com/llms.txt
-- **API base:** `https://api.5dollarfootballapi.com/v1`
+## 5DollarFootballAPI on APIs.io
 
-Part of the [API Evangelist](https://apievangelist.com) network.
+Everything profiled for 5DollarFootballAPI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/5dollarfootballapi/](https://apis.io/providers/5dollarfootballapi/)** — or go straight to one of the APIs or properties below.
 
-## How this entry came to exist
+### APIs (8)
 
-Submitted through the apis.io Add-API form on 2026-08-19 — twice, three hours apart, and **parked
-both times**. Both gate dossiers reported the domain "unreachable on every request" with "zero web
-footprint".
+- [5DollarFootballAPI Bookmakers API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-bookmakers-api/) — The bookmakers quoted by the odds endpoints.
+- [5DollarFootballAPI Countries API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-countries-api/) — The country master referenced by league and team records.
+- [5DollarFootballAPI Fixtures API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-fixtures-api/) — Matches: the daily window and per-fixture detail — events, statistics, odds and odds history.
+- [5DollarFootballAPI Leagues API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-leagues-api/) — Competitions and their seasons, plus a whole season of fixtures.
+- [5DollarFootballAPI Standings API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-standings-api/) — League tables — points, and the corner and card tables.
+- [5DollarFootballAPI Status API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-status-api/) — Your plan, limits and usage.
+- [5DollarFootballAPI Teams API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-teams-api/) — Clubs and national teams, plus their fixture history.
+- [5DollarFootballAPI Bookmakers API](https://apis.io/apis/5dollarfootballapi/5dollarfootballapi-bookmakers-api/) — The bookmakers quoted by the odds endpoints.
 
-That was no longer true when a human checked it. The homepage, all seven declared pointers, the
-apis.json, the llms.txt and a valid 169KB OpenAPI 3.1.0 all returned 200, and a nonsense control
-path returned a real 404. The site was most likely not yet live at submission time, and the
-resubmission three hours later was probably an attempt to get it re-read.
+### Published properties
 
-Admitted by hand rather than dropped. Everything in `apis.yml` is harvested from the live surface,
-not from either submission record — both were thin, carrying a single pointer each. The full
-evidence is in `apis.yml` under `x-evidence`.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [5Dollarfootballapi Agentic Access](https://apis.io/agentic-access/5dollarfootballapi/5dollarfootballapi-agentic-access/)
+
+#### JSON Schema (1)
+
+The data models the API reads and writes.
+
+- [SuccessEnvelope](https://apis.io/schemas/5dollarfootballapi/5dollarfootballapi-success-envelope/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [5Dollarfootballapi Context](https://apis.io/jsonld/5dollarfootballapi/5dollarfootballapi-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [5DollarFootballAPI API Rules](https://apis.io/rules/5dollarfootballapi/5dollarfootballapi-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [5Dollarfootballapi Authentication](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-authentication/)
+- [5Dollarfootballapi Domain Security](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-domain-security/)
+- [5Dollarfootballapi Vulnerability Disclosure](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [5Dollarfootballapi Plans Pricing](https://apis.io/plans/5dollarfootballapi/5dollarfootballapi-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://5dollarfootballapi.com)
+- [Documentation](https://5dollarfootballapi.com/docs)
+- [API reference](https://5dollarfootballapi.com/docs)
+- [Pricing](https://5dollarfootballapi.com/pricing)
+- [Sign up](https://5dollarfootballapi.com/signup)
+- [Changelog](https://5dollarfootballapi.com/docs/changelog)
+- [Blog](https://5dollarfootballapi.com/blog)
+- [Trust centre](https://5dollarfootballapi.com/trust)
+- [Terms of service](https://5dollarfootballapi.com/terms)
+- [Privacy policy](https://5dollarfootballapi.com/privacy)
+- [Status](https://5dollarfootballapi.com/status)
+
+## API Evangelist rating
+
+**Kin Score 58.0** — strong · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 58.5 |
+| Contract governance | 22.0 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 84.2 |
+
+**Agent readiness 41.7** — agent-native
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/5dollarfootballapi/](https://apis.io/providers/5dollarfootballapi/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 5DollarFootballAPI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/5dollarfootballapi/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
