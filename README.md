@@ -91,7 +91,7 @@ Each property below is a page on APIs.io carrying the machine-readable artifact 
 
 Which operations an agent can call, which act, and which need a human in the loop.
 
-- [5Dollarfootballapi Agentic Access](https://apis.io/agentic-access/5dollarfootballapi/5dollarfootballapi-agentic-access/)
+- [5DollarFootballAPI Agentic Access](https://apis.io/agentic-access/5dollarfootballapi/5dollarfootballapi-agentic-access/)
 
 #### JSON Schema (1)
 
@@ -115,15 +115,22 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [5Dollarfootballapi Authentication](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-authentication/)
-- [5Dollarfootballapi Domain Security](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-domain-security/)
-- [5Dollarfootballapi Vulnerability Disclosure](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-vulnerability-disclosure/)
+- [5DollarFootballAPI Authentication](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-authentication/)
+- [5DollarFootballAPI Domain Security](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-domain-security/)
+- [5DollarFootballAPI Vulnerability Disclosure](https://apis.io/security/5dollarfootballapi/5dollarfootballapi-vulnerability-disclosure/)
 
-#### Plans and pricing (1)
+#### Plans and pricing (2)
 
 Published plans, tiers and prices.
 
-- [5Dollarfootballapi Plans Pricing](https://apis.io/plans/5dollarfootballapi/5dollarfootballapi-plans-pricing/)
+- [5DollarFootballAPI Plans Pricing](https://apis.io/plans/5dollarfootballapi/5dollarfootballapi-plans-pricing/)
+- [5DollarFootballAPI Price Estimates](https://apis.io/plans/5dollarfootballapi/5dollarfootballapi-price-estimates/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [5DollarFootballAPI Finops](https://apis.io/finops/5dollarfootballapi/5dollarfootballapi-finops/)
 
 ## Where to find this API
 
@@ -143,18 +150,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 58.0** — strong · rubric 0.25.0 · scored 2026-10-23
+**Kin Score 60.4** — strong · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
-| Discoverability | 73.2 |
-| Contract quality | 58.5 |
+| Discoverability | 83.9 |
+| Contract quality | 64.2 |
 | Contract governance | 22.0 |
-| Operational transparency | 42.1 |
+| Operational transparency | 42.9 |
 | Developer ergonomics | 40.5 |
-| Access clarity | 84.2 |
+| Access clarity | 83.0 |
 
-**Agent readiness 43.1** — agent-native
+**Agent readiness 42.1** — agent-native
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -179,6 +186,10 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Agentic Commerce | — |
 | Pagination Ratio | na |
 | Operation Distinctiveness | distinct |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
 **Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
